@@ -6,7 +6,7 @@ namespace Dapper
     /// <summary>
     /// Represents simple member map for one of target parameter or property or field to source DataReader column
     /// </summary>
-    internal sealed class SimpleMemberMap : SqlMapper.IMemberMap
+    public sealed class SimpleMemberMap : SqlMapper.IMemberMap
     {
         /// <summary>
         /// Creates instance for simple property mapping

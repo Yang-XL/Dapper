@@ -7,8 +7,9 @@ namespace Dapper
 {
     /// <summary>
     /// Represents default type mapping strategy used by Dapper
+    /// 允许重写
     /// </summary>
-    public sealed class DefaultTypeMap : SqlMapper.ITypeMap
+    public class DefaultTypeMap : SqlMapper.ITypeMap
     {
         private readonly List<FieldInfo> _fields;
         private readonly Type _type;
@@ -126,10 +127,12 @@ namespace Dapper
 
         /// <summary>
         /// Gets member mapping for column
+        /// 
+        /// 允许重写
         /// </summary>
         /// <param name="columnName">DataReader column name</param>
         /// <returns>Mapping implementation</returns>
-        public SqlMapper.IMemberMap GetMember(string columnName)
+        public virtual SqlMapper.IMemberMap GetMember(string columnName)
         {
             var property = Properties.Find(p => string.Equals(p.Name, columnName, StringComparison.Ordinal))
                ?? Properties.Find(p => string.Equals(p.Name, columnName, StringComparison.OrdinalIgnoreCase));

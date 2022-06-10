@@ -8,6 +8,9 @@
     <TargetFrameworks>net461;netstandard2.0;net5.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="SqlMapper.Expand.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
 
@@ -17,5 +20,8 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlMapper.Expand.cs" />
   </ItemGroup>
 </Project>
