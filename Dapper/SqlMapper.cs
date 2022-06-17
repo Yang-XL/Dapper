@@ -3054,6 +3054,14 @@ namespace Dapper
 
             PurgeQueryCacheByType(type);
         }
+        /// <summary>
+        /// YXL:2022-02-11 扩展
+        /// </summary>
+        /// <param name="provider"></param>
+        public static void SetTypeMap(Func<Type, ITypeMap> provider)
+        {
+            TypeMapProvider = provider;
+        }
 
         /// <summary>
         /// Internal use only
