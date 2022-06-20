@@ -246,5 +246,23 @@ namespace Dapper
 
             #endregion
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dapperRow"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static object GetValueOfDapperRow(object dapperRow, string columnName)
+        {
+            var row = dapperRow as DapperRow;
+            if (row == null) { return null; }
+            if (row.TryGetValue(columnName, out var val))
+            {
+                return val;
+            }
+            return null;
+
+        }
     }
 }

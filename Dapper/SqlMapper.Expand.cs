@@ -9,7 +9,7 @@ namespace Dapper
     /// <summary>
     /// SqlMapper 扩展
     /// </summary>
-    public partial class SqlMapper
+    public static partial class SqlMapper
     {
         /// <summary>
         /// YXL:2022-02-11 扩展
@@ -19,5 +19,6 @@ namespace Dapper
         {
             TypeMapProvider = provider;
         }
+      
     }
 }
